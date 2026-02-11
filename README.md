@@ -1,5 +1,4 @@
-# Survival Shooter — FMOD Audio Integration Project
-
+# Survival Shooter — NO AUDIO
 A 3D survival shooter game (based on Unity's official tutorial) with **all audio removed**.
 
 The game features a player fighting waves of enemies (ZomBear, ZomBunny, Hellephant) with raycast-based shooting, health management, and scoring. Everything works — it's just silent.
