@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnitySampleAssets.CrossPlatformInput;
+using FMODUnity;
+using System.Runtime.Serialization;
 
 namespace CompleteProject
 {
@@ -19,6 +21,10 @@ namespace CompleteProject
         Light gunLight;                                 // Reference to the light component.
 		public Light faceLight;								// Duh
         float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
+
+        // FMOD Events
+        [SerializeField]
+        private EventReference fmodEvent_playerGunshot;
 
 
         void Awake ()
@@ -115,6 +121,9 @@ namespace CompleteProject
                 // ... set the second position of the line renderer to the fullest extent of the gun's range.
                 gunLine.SetPosition (1, shootRay.origin + shootRay.direction * range);
             }
+
+            // Play FMOD Event
+            RuntimeManager.PlayOneShot(fmodEvent_playerGunshot);
         }
     }
 }
